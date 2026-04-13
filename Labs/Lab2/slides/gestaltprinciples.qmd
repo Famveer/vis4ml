@@ -1,0 +1,176 @@
+---
+title: "Gestalt Principles"
+subtitle: "Autumn 2025"
+format:
+  revealjs:
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: figs/vida.jpg
+    footer: <http://www.visualdslab.com/>
+  html:
+    allow-html: true
+---
+
+## Gestalt Laws
+
+* How does one organize visual information?
+
+## Gestalt Laws
+
+* How does one organize visual information?
+
+* Gestalt: shape/form, how we assemble visual objects into
+a more uni ed whole
+
+
+## Similarity
+
+* Objects that look alike are perceived as being related.
+
+
+## Similarity
+
+* Objects that look alike are perceived as being related.
+
+
+<figure align="center">
+    <img src="./figs/similarity.png" height="100%">
+</figure>
+
+
+## Similarity
+
+* Objects that look alike are perceived as being related.
+
+<figure align="center">
+    <img src="./figs/similarity.png" height="100%">
+</figure>
+
+**Implications**:
+  
+    - How should we visually encode nominal data?
+
+## Proximity
+
+* Objects that are in close spatial proximity are perceived as belonging together.
+
+
+## Proximity
+
+* Objects that are in close spatial proximity are perceived as belonging together.
+
+* How do you group?
+
+
+## Proximity
+
+* Objects that are in close spatial proximity are perceived as belonging together.
+
+* How do you group?
+
+<figure align="center">
+    <img src="./figs/proximity.png" height="100%">
+</figure>
+
+
+
+## Closure
+
+* Objects that are composed by  a set of elements which do not actually touch each other.
+
+## Closure
+
+* Objects that are composed by  a set of elements which do not actually touch each other.
+
+<figure align="center">
+    <img src="./figs/closure.png" height="400">
+</figure>
+
+## Enclosure
+
+* Objects that are bound by a common region perceived as belonging together.
+
+
+## Enclosure
+
+* Objects that are bound by a common region perceived as belonging together.
+
+<figure align="center">
+    <img src="./figs/enclosure.png" height="100%">
+</figure>
+
+
+## Enclosure
+
+* Objects that are bound by a common region perceived as belonging together.
+
+<figure align="center">
+    <img src="./figs/enclosure.png" height="100%">
+</figure>
+
+**Implications**:
+  
+    - Ensure sufficient discrimination between your plots.  
+    - Don’t let marks “float in space”.
+
+## Connectedness
+
+* Objects that are visually connected in some form are perceived as related.
+
+
+## Connectedness
+
+* Objects that are visually connected in some form are perceived as related.
+
+<figure align="center">
+    <img src="./figs/connectedness.png" height="100%">
+</figure>
+
+
+## Connectedness
+
+* Objects that are visually connected in some form are perceived as related.
+
+<figure align="center">
+    <img src="./figs/connectedness.png" height="100%">
+</figure>
+
+**Implications**:
+  
+    - Encode graph, networks, clusters, or groups in general.
+    
+
+## Continuity
+
+* Objects that are perceive as a single uninterrupted object when intersect.
+    
+
+## Continuity
+
+* Objects that are perceive as a single uninterrupted object when intersect.
+
+<figure align="center">
+    <img src="./figs/continuity.png" height="100%">
+</figure>
+
+
+## Summary
+
+<figure align="center">
+    <img src="./figs/summary.png" height="100%">
+</figure>
+
+Among others ...
+
+## References
+
+Great example of Interaction designs!
+
+[video link](https://www.interaction-design.org/literature/topics/gestalt-principles)
+
+
+
+
+

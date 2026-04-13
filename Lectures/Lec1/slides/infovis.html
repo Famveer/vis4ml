@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="infovis_files/libs/clipboard/clipboard.min.js"></script>
+<script src="infovis_files/libs/quarto-html/tabby.min.js"></script>
+<script src="infovis_files/libs/quarto-html/popper.min.js"></script>
+<script src="infovis_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="infovis_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="infovis_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="infovis_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <title>Visualization for Machine Learning</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="infovis_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="infovis_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="infovis_files/libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
+  <link href="infovis_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="infovis_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="infovis_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="infovis_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="infovis_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="infovis_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Visualization for Machine Learning</h1>
+  <p class="subtitle">Autumn 2025</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="what-is-information-visualization-why-use-it" class="slide level2">
+<h2>What is Information Visualization? Why Use It?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>“The use of computer-supported, interactive, visual representations of abstract data to amplify cognition.”</p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="./figs/infovis.jpg"></p>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="key-concepts" class="slide level2">
+<h2>Key Concepts</h2>
+<ul>
+<li>Computer-Based</li>
+<li>Visual Representation</li>
+<li>Abstract Data</li>
+<li>Interactive</li>
+<li>Amplify Cognition</li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="abstract-data" class="slide level2">
+<h2>Abstract Data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Data with no obvious/natural visual representation</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="./figs/spreadsheet.jpg"> <img data-src="./figs/deepwork.jpg"></p>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="abstract-data-1" class="slide level2">
+<h2>Abstract Data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Data with no obvious/natural visual representation</p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="./figs/chest.jpg"></p>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="interactive" class="slide level2">
+<h2>Interactive</h2>
+<p>Users can change what is visualized and how it is visualized.</p>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="example-taxivis" class="slide level2">
+<h2>Example: TaxiVis</h2>
+<video width="100%" height="80%" controls="">
+<source src="./figs/taxivis.mp4" type="video/mp4">
+</video>
+</section>
+<section id="amplify-cognition" class="slide level2">
+<h2>Amplify Cognition</h2>
+<div>
+<ul>
+<li class="fragment">Solve problems with data with less effort, in a shorter time, and more accurately.</li>
+<li class="fragment">… or even be able to do things it would be impossible to do without a computer and a graphical representation.</li>
+</ul>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="cognitive-artifacts-tools-that-help-us-think" class="slide level2">
+<h2>Cognitive artifacts: tools that help us think!</h2>
+<div>
+<ul>
+<li class="fragment">Try to multiply 34 x 72 using exclusively your mind …</li>
+<li class="fragment">… now do it again using pen and paper.
+<ul>
+<li class="fragment"><img data-src="./figs/multiplication.jpg"></li>
+</ul></li>
+</ul>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="why-is-it-easier" class="slide level2">
+<h2>Why is it easier?</h2>
+<div>
+<ul>
+<li class="fragment">… because we can store intermediary results in the paper rather than keeping the information in mind. That is, part of the memory is in the world rather than in your head.</li>
+</ul>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="lets-play-the-game-of-15" class="slide level2">
+<h2>Let’s play the “game of 15” …</h2>
+<div>
+<ul>
+<li class="fragment">The “pieces” for the game are the nine digits: 1, 2, 3, 4, 5, 6, 7, 8, 9. Each player takes a digit in turn. Once a digit is taken, it cannot be used by the other player. The first player to get three digits that sum to 15 wins.</li>
+<li class="fragment">Here is a sample game: Player A takes 8. Player B takes 2. Then A takes 4, and B takes 3. A takes 5.</li>
+<li class="fragment">Question 1: Suppose you are now to step in and play for B. What move would you make?</li>
+</ul>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="lets-play-a-different-game-tic-tac-toe" class="slide level2">
+<h2>Let’s play a different game: tic-tac-toe</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Players alternately place an O or a X in one of nine spaces arranged in a rectangular array. Once a space has been taken, it cannot be changed by either player. The first player to get three symbols in a straight line wins. Suppose player A is X and B is O, and the game has reached the state on the right.</p>
+<p>Question 2: Suppose you are now to step in and play an O for B. What move would you make?</p>
+</div><div class="column" style="width:20%;">
+<p><img data-src="./figs/tictactoe.jpg"></p>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="problem-isomorphs-herbert-simon" class="slide level2">
+<h2>Problem Isomorphs <a href="https://en.wikipedia.org/wiki/Herbert_A._Simon">Herbert Simon</a></h2>
+<div>
+<ul>
+<li class="fragment">The two problems are equivalent!</li>
+</ul>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="why-use-visualization" class="slide level2">
+<h2>Why use visualization?</h2>
+<ul>
+<li>Explanatory visualization</li>
+<li>Exploratory visualization</li>
+<li>Confirmatory visualization</li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="great-explanatory-visualizations" class="slide level2">
+<h2>Great Explanatory Visualizations</h2>
+<ul>
+<li><p>NYT: https://flowingdata.com/tag/new-york-times/</p></li>
+<li><p>Washington Post: http://postgraphics.tumblr.com/</p></li>
+<li><p>Gregor Aisch: https://driven-by-data.net/</p></li>
+<li><p>Nicky Case/Explorable Explanations: http://explorabl.es/</p></li>
+<li><p>Polygraph: http://polygraph.cool/ &amp; https://pudding.cool/</p></li>
+<li><p>ProPublica: https://www.propublica.org/</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="why-use-a-graphical-representation" class="slide level2">
+<h2>Why use a graphical representation?</h2>
+<ul>
+<li>Large parts of our brain are devoted to spatial processing</li>
+</ul>
+
+<img data-src="./figs/visualbrain.jpg" class="r-stretch"><div class="footer">
+<p>Via Wikipedia, By OpenStax College - Anatomy &amp; Physiology, Connexions Web site., Jun 19, 2013., CC BY 3.0</p>
+</div>
+</section>
+<section id="why-use-a-computer-to-visualize-data" class="slide level2">
+<h2>Why use a computer to visualize data?</h2>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="why-use-interaction" class="slide level2">
+<h2>Why use interaction?</h2>
+<ul>
+<li><p>Each visualization can only answer a subset of questions.</p></li>
+<li><p>With interaction the user can change what is visualized and how to answer a multitude of questions.</p></li>
+<li><p>Also one cannot visualize everything at once.</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="how-do-you-assess-the-quality-of-a-visualization" class="slide level2">
+<h2>How do you assess the quality of a visualization?</h2>
+<ul>
+<li>Isn’t it subjective? Some people like A, whereas some others like B.</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">Some visual representations are better than others at solving particular problems …</li>
+</ul>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="digression-graphical-perception" class="slide level2">
+<h2>Digression: Graphical Perception</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<figure>
+<img src="./figs/cleveland-book-cover.jpg" height="500">
+</figure>
+</div><div class="column" style="width:50%;">
+<figure>
+<img src="./figs/cleveland-mcgill-paper.jpg" height="500">
+</figure>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="graphical-perception-experiment" class="slide level2">
+<h2>Graphical Perception Experiment</h2>
+<div class="rows">
+<div class="row" height="50%">
+<figure>
+<img src="./figs/cleveland-mcgill-a-vs-b-examples.jpg" width="100%">
+</figure>
+</div>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="graphical-perception-results" class="slide level2">
+<h2>Graphical Perception Results</h2>
+<div class="rows">
+<div class="row" height="50%">
+<figure>
+<img src="./figs/cleveland-mcgill-a-vs-b-examples.jpg" width="100%">
+</figure>
+</div>
+<div class="row" height="50%">
+<figure>
+<img src="./figs/cleveland-mcgill-a-vs-b-results.jpg" width="60%">
+</figure>
+</div>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="designing-effective-visualizations-requires" class="slide level2">
+<h2>Designing effective visualizations requires</h2>
+<div>
+<ul>
+<li class="fragment">Knowing the design space</li>
+<li class="fragment">Being able to compare the solutions</li>
+<li class="fragment">… in turn comparing the solutions requires understanding human perception.</li>
+</ul>
+</div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="data-types" class="slide level2">
+<h2>Data Types</h2>
+<ul>
+<li><p>The first ingredient in effective visualization is the input data. Data values can represent different forms of measurement.</p></li>
+<li><p>What kinds of comparisons do those measurements support?</p></li>
+<li><p>What kinds of visual encodings then support those comparisons?</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Jeffrey Heer <a href="https://observablehq.com/@uwdata/data-types-graphical-marks-and-visual-encoding-channels">link</a></p>
+</div>
+</section>
+<section id="nominal-n-or-categorical-c" class="slide level2">
+<h2>Nominal (N) or Categorical (C)</h2>
+<ul>
+<li><p>Nominal data — also called categorical data — consist of category names.</p></li>
+<li><p>With nominal data we can compare the equality of values: is value A the same or different than value B? (A = B), supporting statements like “A is equal to B” or “A is not equal to B”.</p></li>
+<li><p>When visualizing nominal data we should readily perceive if values are the same or different: position, color hue (blue, red, green, etc.), and shape are all reasonable options.</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Jeffrey Heer <a href="https://observablehq.com/@uwdata/data-types-graphical-marks-and-visual-encoding-channels">link</a></p>
+</div>
+</section>
+<section id="ordinal-o" class="slide level2">
+<h2>Ordinal (O)</h2>
+<ul>
+<li><p>Ordinal data consist of values that have a specific ordering.</p></li>
+<li><p>With ordinal data we can compare the rank-ordering of values: does value A come before or after value B? (A &lt; B), supporting statements like “A is less than B” or “A is greater than B”.</p></li>
+<li><p>When visualizing ordinal data, we should perceive a sense of rank-order. Position, size, or color value (brightness) might be appropriate, whereas color hue (which is not perceptually ordered) would be less appropriate.</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Jeffrey Heer <a href="https://observablehq.com/@uwdata/data-types-graphical-marks-and-visual-encoding-channels">link</a></p>
+</div>
+</section>
+<section id="quantitative-q" class="slide level2">
+<h2>Quantitative (Q)</h2>
+<ul>
+<li><p>Quantitative data measures numerical differences..</p></li>
+<li><p>There are two main sub-types:</p>
+<ul>
+<li><strong>Interval</strong>: Measures distances (A - B).</li>
+<li><strong>Ratio</strong>: Measures proportions or scale factors (A / B).</li>
+</ul></li>
+<li><p>Quantitative values can be visualized using position, size, or color, among other channels. A zero baseline is essential for ratio comparisons but optional for interval data.</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Jeffrey Heer <a href="https://observablehq.com/@uwdata/data-types-graphical-marks-and-visual-encoding-channels">link</a></p>
+</div>
+</section>
+<section id="temporal-t" class="slide level2">
+<h2>Temporal (T)</h2>
+<ul>
+<li><p>Temporal values measure time points or intervals. This type is a special case of quantitative values (timestamps) with rich semantics and conventions (i.e., the Gregorian calendar).</p></li>
+<li><p>Example temporal values include date strings such as “2019-01-04” and “Jan 04 2019”, as well as standardized date-times such as the ISO date-time format: “2019-01-04T17:50:35.643Z”. There are no temporal values in our global development dataset above, as the year field is encoded as an integer.</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Jeffrey Heer <a href="https://observablehq.com/@uwdata/data-types-graphical-marks-and-visual-encoding-channels">link</a></p>
+</div>
+</section>
+<section id="spatial-s" class="slide level2">
+<h2>Spatial (S)</h2>
+<ul>
+<li><p>Data that can be shown in a map</p></li>
+<li><p>Also known as geospatial data, refers to information that identifies the geographic location and characteristics of natural or constructed features and boundaries on the Earth. <a href="https://atlan.com/spatial-data/">https://atlan.com/spatial-data/</a></p></li>
+</ul>
+</section>
+<section id="data-types-summary" class="slide level2">
+<h2>Data Types Summary</h2>
+<ul>
+<li><p>These data types are not mutually exclusive, but rather form a hierarchy: ordinal data support nominal (equality) comparisons, while quantitative data support ordinal (rank-order) comparisons.</p></li>
+<li><p>Moreover, these data types do not provide a fixed categorization. For example, just because a data field is represented using a number doesn’t mean we have to treat it as a quantitative type! We might interpret a set of ages (10 years old, 20 years old, etc.) as nominal (underage or overage), ordinal (grouped by year), or quantitative (calculate average age).</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Jeffrey Heer <a href="https://observablehq.com/@uwdata/data-types-graphical-marks-and-visual-encoding-channels">link</a></p>
+</div>
+</section>
+<section id="fundamental-charts" class="slide level2">
+<h2>Fundamental Charts</h2>
+<ul>
+<li><p>Widely adopted, effective, useful.</p></li>
+<li><p>Solve very large percentage of vis problems.</p></li>
+<li><p>Training ground for more sophisticated graphs.</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="bar-chart" class="slide level2">
+<h2>Bar Chart</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Visualize how a quantity distributes across a set of categories.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<figure>
+<img src="./figs/barchart.jpg" height="500">
+</figure>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="line-chart" class="slide level2">
+<h2>Line Chart</h2>
+<ul>
+<li>Visualize how a quantity changes in relation to another quantity (typically time).</li>
+</ul>
+
+<img data-src="./figs/linechart.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="scatter-plot" class="slide level2">
+<h2>Scatter Plot</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Visualize how a quantity relate to another quantity.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="./figs/scatterplot.jpg"></p>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="matrix" class="slide level2">
+<h2>Matrix</h2>
+<ul>
+<li>Visualize how a quantity distributes across two categories.</li>
+</ul>
+
+<img data-src="./figs/matrixchart.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="symbol-map" class="slide level2">
+<h2>Symbol Map</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Visualize how a quantity distributes across two spatial coordinates.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="./figs/symbolmap.jpg"></p>
+</div></div>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="fundamental-graphs-summary" class="slide level2">
+<h2>Fundamental Graphs Summary</h2>
+
+<img data-src="./figs/plots-vs-datatypes.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="scatter-plots-faceting-without" class="slide level2">
+<h2>Scatter Plots + Faceting (without)</h2>
+
+<img data-src="./figs/scatterplot-simple.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="scatter-plots-faceting-with" class="slide level2">
+<h2>Scatter Plots + Faceting (with)</h2>
+
+<img data-src="./figs/scatterplot-facet.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="tidy-data" class="slide level2">
+<h2>Tidy Data</h2>
+<ul>
+<li>Goal: organizing data to make visualization easier</li>
+</ul>
+
+<img data-src="./figs/tidydata-paper.jpg" class="r-stretch"><p><a href="https://vita.had.co.nz/papers/tidy-data.pdf">link to paper</a></p>
+<div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-1" class="slide level2">
+<h2>Tidy Data</h2>
+
+<img data-src="./figs/td-table-typical.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-2" class="slide level2">
+<h2>Tidy Data</h2>
+
+<img data-src="./figs/td-table-alternative.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-3" class="slide level2">
+<h2>Tidy Data</h2>
+
+<img data-src="./figs/td-table-tidy.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-definition" class="slide level2">
+<h2>Tidy Data: Definition</h2>
+<p>In tidy data:</p>
+<ul>
+<li><p>Each variable forms a column.</p></li>
+<li><p>Each observation forms a row.</p></li>
+<li><p>Each type of observational unit forms a table.</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-example-1" class="slide level2">
+<h2>Tidy Data: Example #1</h2>
+
+<img data-src="./figs/td-table-example.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-4" class="slide level2">
+<h2>Tidy Data</h2>
+
+<img data-src="./figs/td-table-towards-tidy.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-example-2" class="slide level2">
+<h2>Tidy Data: Example #2</h2>
+
+<img data-src="./figs/td-table-before-tidy.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="tidy-data-5" class="slide level2">
+<h2>Tidy Data</h2>
+
+<img data-src="./figs/td-table-after-tidy.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="graphical-encoding" class="slide level2">
+<h2>Graphical Encoding</h2>
+<p>Every visualization can be described in terms of:</p>
+<ul>
+<li><p>its basic graphical components</p></li>
+<li><p>mapping strategy between data and graphics</p></li>
+<li><p>more precisely, a set of mappings between:</p>
+<ul>
+<li>data items — visual marks</li>
+<li>data attributes — visual channels</li>
+</ul></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Hadley Wickham</p>
+</div>
+</section>
+<section id="graphical-marks" class="slide level2">
+<h2>Graphical Marks</h2>
+
+<img data-src="./figs/marks.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="visual-encoding-channels" class="slide level2">
+<h2>Visual Encoding Channels</h2>
+
+<img data-src="./figs/channels.jpg" class="r-stretch"><div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="visualization-decoding" class="slide level2">
+<h2>Visualization Decoding</h2>
+<ul>
+<li><p>Marks — Data Items</p></li>
+<li><p>Channels — Data Attributes</p></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+
+<img data-src="./figs/usainboltnyt.jpg" class="r-stretch"><p><a href="http://www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html?_r=0">NYT link</a></p>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="expressiveness-principle" class="slide level2">
+<h2>Expressiveness Principle</h2>
+<p>The visual representation should express the type of information that exists in the data.</p>
+<ul>
+<li>Ordered data should not appear as unordered.</li>
+<li>Unordered data should not appear as ordered.</li>
+</ul>
+</section>
+<section id="effectiveness-principle" class="slide level2">
+<h2>Effectiveness Principle</h2>
+<p>Relevance of information should match the effectiveness of the channels used.</p>
+<ul>
+<li>Represent important information with more effective channels</li>
+</ul>
+</section>
+<section id="effectiveness-effect" class="slide level2">
+<h2>Effectiveness Effect</h2>
+
+<img data-src="./figs/effectiveness.jpg" class="r-stretch"></section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Visual Encoding/Decoding</li>
+<li>Graphical Marks and Channels</li>
+<li>Expressiveness and Effectiveness</li>
+<li>Channels Appropriateness and Ranking</li>
+<li>Evaluation and Design</li>
+<li>Contextual Components
+<ul>
+<li>Labels, legends and annotations</li>
+<li>Axes, grids and trend lines</li>
+</ul></li>
+</ul>
+<div class="footer">
+<p>Slides based on material from Prof.&nbsp;Enrico Bertini</p>
+</div>
+</section>
+<section id="neo-interactive-confusion-matrices" class="slide level2">
+<h2>Neo: Interactive Confusion Matrices</h2>
+<p>Great example of research in VisML!</p>
+<iframe width="100%" height="70%" src="https://www.youtube.com/embed/LmsJJDHfGlI">
+</iframe>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="figs/vida.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="http://www.visualdslab.com/" class="uri">http://www.visualdslab.com/</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="infovis_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="infovis_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="infovis_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="infovis_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

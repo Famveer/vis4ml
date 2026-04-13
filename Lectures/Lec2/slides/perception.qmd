@@ -1,0 +1,414 @@
+---
+title: "Visualization for Machine Learning"
+subtitle: "Autumn 2025"
+format:
+  revealjs:
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: figs/vds.png
+    footer: <http://www.visualdslab.com/>
+  html:
+    allow-html: true
+editor: 
+  render-on-save: true
+---
+
+## Perception for Design
+
+![](./figs/colinwarebook.jpg){fig-align="center"}
+
+
+
+## Brain
+
+*"Visual thinking consists of a series of acts of attention, driving eye movements, and tuning our pattern finding circuits"*, Colin Aware
+
+![](./figs/brain.jpg){fig-align="center"}
+
+::: footer
+Image from Wikipedia: [link](https://en.wikipedia.org/wiki/Human_brain)
+:::
+
+## The Vision Brain
+
+*"Visual thinking consists of a series of acts of attention, driving eye movements, and tuning our pattern finding circuits"*, Colin Aware
+
+![](./figs/visualbrain.jpg){fig-align="center"}
+
+::: footer
+Image from Wikipedia: [link](https://en.wikipedia.org/wiki/Human_brain)
+:::
+
+## The Act of Perception
+
+-   Botton-Up and Top-Down Processes
+
+![](./figs/actofperception.jpg){fig-align="center"}
+
+::: footer
+Material from Colin Ware's book
+:::
+
+## The Act of Perception
+
+-   Bottom-up: information is sucessively selected and filtered into patterns as it passes a sequence of stages. Ware outlines three stages: 1) optical nerve to V1 Cortex; 2) use texture and colors to aggregate *patterns*; 3) visual objects are recognized in the *visual working memory*.
+
+![](./figs/facevase-illusion.jpg){fig-align="center"}
+
+::: footer
+Image from the book: "Eye and Brain: The Psychology of Seeing", Gregory
+:::
+
+## The Act of Perception
+
+-   Top-Down: Every stage of bottom-up processing contains a corresponding top-down process. Ware describes the process as "attention". The dominant principle is that we only get the information that we need, when we need it.
+
+![](./figs/eyemovements.jpg){fig-align="center"}
+
+::: footer
+Material from Colin Ware's book
+:::
+
+## The Implications for Design
+
+-   "Just-in-time visual queries" (Ware)
+
+-   "One way to look at the brain operates is a set of nested loops. Outer loops deal with generality while inner loops process detail." (Ware)
+
+![](./figs/brainproblemsolvingloop.jpg){fig-align="center"}
+
+::: footer
+Material from Colin Ware's book
+:::
+
+## Low-Level Feature Analysis
+
+-   David Hubel and Torsten Wiesel won Nobel prize for this discovery.
+
+![](./figs/v1-cortical-layer.jpg){fig-align="center"}
+
+::: footer
+Material from Colin Ware's book
+:::
+
+## What and Where Pathways
+
+-   What: identification of objects in environment.
+-   Where: location of objects and eye movement.
+
+![](./figs/what-and-where-pathway.jpg){fig-align="center"}
+
+::: footer
+Material from Colin Ware's book
+:::
+
+## What Stands Out (Popout)
+
+-   Anne Triesman studied how to find patterns and shapes when surrounded by others.
+
+::::: columns
+::: {.column width="50%"}
+![](./figs/popout.jpg)
+:::
+
+::: {.column width="50%"}
+![](./figs/popout7.jpg)
+:::
+:::::
+
+For some configurations the time *did not* depend on the number of distracters (pre-attentive).
+
+::: footer
+Material from Colin Ware's book
+:::
+
+## What Stands Out (Popout)
+
+![](./figs/preattentive-vs-not.jpg){fig-align="center"}
+
+::: footer
+Material from Colin Ware's book
+:::
+
+## The Gestalt Principles [link, see video](https://www.interaction-design.org/literature/topics/gestalt-principles)
+
+-   Visualization is a two-way street:
+    -   We (the vis designer) bring something to the table.
+    -   The human (end user) brings their prior experience.
+-   Design should take such prior experience into account!
+-   What is prior experience? Gestalt laws.
+
+::: footer
+Material from Matt Berger
+:::
+
+## Closure
+
+-   We can complete incomplete shapes
+
+![](./figs/closure.jpg){fig-align="center"}
+
+-   Implications: visualizations can be unintentionally misleading! Conversely: sometimes only necessary to show sparse set of marks to convey trend (dot plot)
+
+::: footer
+Material from Matt Berger
+:::
+
+## Similarity
+
+-   Elements with the same visual properties considered to be grouped
+
+![](./figs/similarity.jpg){fig-align="center"}
+
+::: footer
+Material from Matt Berger
+:::
+
+## Similarity
+
+-   Elements with the same visual properties considered to be grouped
+
+![](./figs/similarity-example.jpg){fig-align="center"}
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Proximity
+
+-   Elements that are of close spatial proximity are somehow grouped.
+
+![](./figs/proximity.jpg){fig-align="center"}
+
+::: footer
+Material from Matt Berger
+:::
+
+## Proximity
+
+-   Elements that are of close spatial proximity are somehow grouped.
+
+![](./figs/proximity-example.jpg){fig-align="center"}
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Enclosure
+
+-   Explicit visual encoding of enclosure also depicts grouping.
+
+![](./figs/enclosure.jpg){fig-align="center"}
+
+::: footer
+Material from Matt Berger
+:::
+
+## Enclosure
+
+-   Explicit visual encoding of enclosure also depicts grouping.
+
+![](./figs/bubblesets.jpg){fig-align="center"}
+
+[Bubblesets video link](https://www.youtube.com/watch?v=P6CgBmIiXaE)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Connection
+
+-   Objects connected together are perceived as a group.
+
+![](./figs/connection.jpg){fig-align="center"}
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Connection
+
+-   Objects connected together are perceived as a group.
+
+![](./figs/connection2.jpg){fig-align="center"}
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Connection
+
+-   Objects connected together are perceived as a group.
+
+![](./figs/connection3.jpg){fig-align="center"}
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Connection
+
+-   Objects connected together are perceived as a group.
+
+![](./figs/connection4.jpg){fig-align="center"}
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Just Noticeable Difference (JND)
+
+-   In psychophysics a just-noticeable difference or JND is the amount something must be changed in order for a difference to be noticeable, detectable at least half the time.
+
+-   Stevens's power law: [link](https://en.wikipedia.org/wiki/Stevens%27s_power_law)
+
+![](./figs/psychophysical-law.jpg){fig-align="center"}
+
+::: footer
+Wikipedia: [link](https://en.wikipedia.org/wiki/Just-noticeable_difference)
+:::
+
+<!-- ## Accuracy
+
+-   How accurately a channel can express quantitative information -->
+
+## Graphical Perception
+
+::::: columns
+::: {.column width="50%"}
+<figure><img src="./figs/cleveland-book-cover.jpg" height="500"/></figure>
+:::
+
+::: {.column width="50%"}
+<figure><img src="./figs/cleveland-mcgill-paper.jpg" height="500"/></figure>
+:::
+:::::
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Graphical Perception Experiment
+
+:::: rows
+::: {.row height="50%"}
+<figure><img src="./figs/cleveland-mcgill-a-vs-b-examples.jpg" width="100%"/></figure>
+:::
+::::
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Graphical Perception Results
+
+::::: rows
+::: {.row height="50%"}
+<figure><img src="./figs/cleveland-mcgill-a-vs-b-examples.jpg" width="100%"/></figure>
+:::
+
+::: {.row height="50%"}
+<figure><img src="./figs/cleveland-mcgill-a-vs-b-results.jpg" width="60%"/></figure>
+:::
+:::::
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Accuracy
+
+-   Position \> Length and Angle \> Area
+
+-   Prioritize high-rank channels (with reason)
+
+-   Do not expect precise judgments from low-rank channels
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Effectiveness Effect
+
+![](./figs/effectiveness.jpg){fig-align="center"}
+
+## Discriminability
+
+-   How many distinct values can be distinguished within a channel
+
+-   It depends on:
+
+    -   Channel properties
+    -   Spatial arrangement
+    -   Size (resolution)
+    -   Cardinality
+
+-   Warning: Do not overestimate the number of values viewers can perceive/discriminate
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Discriminability
+
+-   Many channels, in particular identity channels, can only support a limited number of discriminable levels.
+    -   Line width is one of the most limited with perhaps 3 levels.
+    -   Using more than 5 or 6 color hues is not recommended.
+    -   Similarly, using more than 5 or 6 symbol shapes can create difficulties.
+-   If the number of levels that can be represented by a channel is smaller than the number of attribute levels then some form of meaningful aggregation is needed.
+
+::: footer
+Material from [link](https://homepage.divms.uiowa.edu/~luke/classes/STAT4580/percep.html#discriminability)
+:::
+
+## Popout
+
+-   Tasks performed in less than 200 to 250 milliseconds.
+
+-   Faster than eyes movement initiation.
+
+-   Suggest processing by parallel low-level visual system.
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Popout
+
+![](./figs/popout.jpg)
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Some features are not pre-attentive
+
+![](./figs/not-preattentive.jpg)
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Tasks requiring the use of multiple channels are (most of the time) not preattentive
+
+![](./figs/not-preattentive2.jpg)
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Separability
+
+-   Amount of interference between channels
+
+![](./figs/color-and-shape.jpg)
+
+::: footer
+Slides based on material from Prof. Enrico Bertini
+:::
+
+## Relative vs Absolute
+
+![](./figs/absolute-vs-relative.jpg)

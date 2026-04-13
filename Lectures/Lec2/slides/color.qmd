@@ -1,0 +1,235 @@
+---
+title: "Visualization for Machine Learning"
+subtitle: "Autumn 2025"
+format:
+  revealjs:
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: figs/vds.png
+    footer: <http://www.visualdslab.com/>
+  html:
+    allow-html: true
+editor: 
+  render-on-save: true
+---
+
+## Color
+
+![](./figs/animal-colors.jpg)
+
+Vasas et al, PLOS Biology, 2024
+
+::: footer
+Image from [link](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3002444)
+:::
+
+## Visible Spectrum
+
+![](./figs/visiblespectrum.jpg)
+
+## Light
+
+* Visible range: 390-700nm
+
+* Luminance has a large dynamic range:
+
+  – 0.00003 -- Moonless overcast night sky 
+
+  – 30 -- Sky on overcast day
+
+  – 3000 -- Sky on clear day
+
+  – 16,000 -- Snowy ground in full sunlight
+
+## Light
+
+* Colors result from spectral curves 
+
+  – dominant wavelength, hue
+
+  – brightness, lightness
+
+  – purity, saturation
+
+## Physiology of the Eye
+
+![](./figs/physiology-eye.jpg)
+
+## The Retina
+
+![](./figs/retina.jpg)
+
+## Photoreceptors
+
+* Discrete sensors that measure energy 
+  – Adaptation
+* Rods
+  - active at low light levels (scotopic vision)
+  - only one wavelength-sensitivity function
+* Cones
+  - active at normal light levels (photoptic)
+  - three types: sensitivity functions with different peaks
+
+## Cone Sensitivity
+
+![](./figs/cones-spectral-sensitity.jpg)
+
+::: footer
+Image from [link](https://wrfranklin.org/Teaching/graphics-f2019/files/stone_colors.pdf)
+:::
+
+<!-- ## Density of Cones
+
+![](./figs/cones-density.jpg) -->
+
+<!-- ## Cones and Rods
+
+![](./figs/cones-and-rods-sensitivity.jpg) -->
+
+## Color Stimulus
+
+![](./figs/color-stimulus.jpg)
+
+<!-- ## Color Matching Experiments
+
+![](./figs/color-matching-experiments.jpg) -->
+
+
+## Color in Visualization
+
+* Trichromacy: Humans perceive colors according to three channels
+
+* Most usable and useful way to describe colors (especially for visualization):
+  - Hue, Saturation, Luminance
+
+::: footer
+Material from Enrico Bertini
+:::
+
+
+## How do we use color in visualization?
+
+* Quantify
+
+* Label
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Quantify
+
+![](./figs/color-quantify.jpg)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Label
+
+![](./figs/color-label.jpg)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+
+## Quantitative Color Scales
+
+* Desired Properties of Quantitative Color Scale:
+  - Uniformity (value difference = perceived difference)
+  - Discriminability (as many distinct values as possible)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+
+## Quantitative Color Scales
+
+* Desired Properties of Quantitative Color Scale:
+  - Uniformity (value difference = perceived difference)
+  - Discriminability (as many distinct values as possible)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Single Hue Sequential Scales
+
+* Choose one hue
+* Map value to luminance
+
+![](./figs/single-hue-color-scale.jpg)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Categorical Color Scales
+
+* Properties:
+  - Uniformity (uniform saliency / nothing stands out)
+  - Discriminability (as many distinct values as possible)
+
+  ![](./figs/categorical-color-scale.jpg)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+
+## Categorical Color Scales
+
+* How many distinct values can one perceive?
+
+* how many can you use in a visualization?
+
+* Estimates are between 5-10 distinct codes.
+
+* Healey, Christopher G. "Choosing effective colours for data visualization." Proceedings of IEEE Visualization'96, 1996.
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Diverging Color Scales
+
+* Sometime useful/necessary to distinguish values above and below a threshold.
+
+
+::: columns
+::: {.column width="50%"}
+![](./figs/election-results-continous-colormap.jpg)
+:::
+
+::: {.column width="50%"}
+![](./figs/election-results-divergent-colormap.jpg)
+:::
+
+:::
+
+Created using these data: [link](https://github.com/tonmcg/County_Level_Election_Results_12-16)
+
+::: footer
+Material from Enrico Bertini
+:::
+
+## Color Blindness
+
+* Missing or defective photoreceptors:
+   - 10% male and 1% female have some color deficiencies
+
+<figure align="center">
+    <img src="./figs/color-blindness.jpg" width="500">
+</figure>
+
+
+Oliveira, Manuel. "Towards More Accessible Visualizations for Color-Vision-Deficient Individuals." Comput. Sci. Eng., 2013.
+
+::: footer
+Material from Enrico Bertini
+:::
+
