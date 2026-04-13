@@ -1,5 +1,6 @@
 title: Data Visualization 2025.1
 description: undergraduate course
+theme: just-the-docs
 remote_theme: just-the-docs/just-the-docs
 
 url: "https://famveer.github.io"
@@ -8,7 +9,7 @@ baseurl: "/vis4ml"
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
-logo: "/assets/images/Logotipo.png"
+logo: "/assets/images/logo-famveer.png"
 favicon_ico: "/assets/images/favicon.ico"
 
 search_enabled: true
@@ -66,7 +67,7 @@ compress_html:
   # ignore:
   #   envs: all
 
-gh_edit_link: true # show or hide edit this page link 
+gh_edit_link: true # show or hide edit this page link
 # gh_edit_link_text: "Edit this page on GitHub."
 # gh_edit_repository: "https://github.com/just-the-docs/just-the-docs" # the github URL for your repo
 gh_edit_branch: "main" # the branch that your docs is served from
