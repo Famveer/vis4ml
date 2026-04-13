@@ -1,14 +1,14 @@
 title: Data Visualization 2025.1
 description: undergraduate course
-theme: just-the-docs
 remote_theme: just-the-docs/just-the-docs
 
-url: https://jpocom.github.io/vis4ml
+url: "https://famveer.github.io"
+baseurl: "/vis4ml"
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
-logo: "/assets/images/logo-vds3.png"
+logo: "/assets/images/Logotipo.png"
 favicon_ico: "/assets/images/favicon.ico"
 
 search_enabled: true
