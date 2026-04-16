@@ -1,3 +1,7 @@
+# Visualization for Machine Learning course
+
+Vis4ML course at FGV-EMAp. All course materials [here](https://famveer.github.io/vis4ml/).
+
 # Pre Requisites
 
 * **GEM** >= 3.3.5
